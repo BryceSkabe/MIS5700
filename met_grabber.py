@@ -1,8 +1,6 @@
 import requests
 
-met = requests.get('https://collectionapi.metmuseum.org/public/collection/v1/objects', params='objectIDs')
-
-met = met.json()
+met = requests.get('https://collectionapi.metmuseum.org/public/collection/v1/objects', params='objectIDs').json()
 
 object_list = [k for k in met.values()]
 
