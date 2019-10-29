@@ -1,0 +1,135 @@
+/**
+ * Funfact
+ */
+
+.funfact-wrap{
+    [class^="col"]:nth-child(even){
+        .funfact{
+            background: darken($theme-color, 7%);
+        }
+    }
+    [class^="col"]:nth-child(odd){
+        .funfact{
+            background: $theme-color;
+        }
+    }
+
+    &.funfact-wrap-grey{
+        [class^="col"]:nth-child(even){
+            .funfact{
+                background: #e8e8e8;
+            }
+        }
+        [class^="col"]:nth-child(odd){
+            .funfact{
+                background: #f3f3f3;
+            }
+        }
+    }
+
+}
+
+.funfact{
+    text-align: center; 
+    padding: 100px 30px;
+    .funfact-inner{
+        text-align: left;
+        display: inline-block;
+        position: relative;
+        padding-left: 70px;
+        i{
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 70px;
+            font-size: 55px;
+            color: #ffffff;
+        }
+        span.odometer{
+            margin-bottom: 0;
+            font-weight: 700;
+            font-family: $body-font;
+            color: #ffffff;
+            font-size: 30px;
+        }
+        p{
+            font-family: $heading-font;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 0;
+            color: #ffffff;
+        }
+    }
+}
+
+.funfact-wrap-grey{
+    .funfact{
+        i{
+            color: $theme-color;
+        }
+        span.odometer{
+            color: $heading-color;
+        }
+        p{
+            color: $heading-color;
+        }
+    }
+}
+
+@media #{$xlg-layout}{
+    .funfact{
+        padding: 75px 30px;
+    }
+}
+
+@media #{$lg-layout}{
+    .funfact{
+        padding: 50px 20px;
+        .funfact-inner{
+            padding-left: 60px;
+            i{
+                width: 60px;
+            }
+        }
+    }
+}
+
+@media #{$md-layout}{
+    .funfact{
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .funfact-wrap-grey{
+        [class^="col"]:nth-child(even){
+            .funfact{
+                border-top: 1px solid #f3f3f3;
+            }
+        }
+        [class^="col"]:nth-child(odd){
+            .funfact{
+                border-top: 1px solid #e8e8e8;
+            }
+        }
+    }
+}
+
+@media #{$sm-layout}{
+    .funfact{
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .funfact-wrap-grey{
+        [class^="col"]:nth-child(even){
+            .funfact{
+                border-top: 1px solid #f3f3f3;
+            }
+        }
+        [class^="col"]:nth-child(odd){
+            .funfact{
+                border-top: 1px solid #e8e8e8;
+            }
+        }
+    }
+    .funfact{
+        padding: 50px 20px;
+    }
+}

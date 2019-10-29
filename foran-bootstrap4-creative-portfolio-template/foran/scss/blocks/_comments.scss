@@ -1,0 +1,143 @@
+/**
+ * Comment Styles
+ */
+
+/* Commentlist */
+.single-comment{
+    position: relative;
+    padding-left: 75px;
+    min-height: 60px;
+    margin-top: 40px;
+    img{
+        width: 60px;
+        border-radius: 5px;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    h6{
+        font-size: 12px;
+        font-weight: 700;
+        color: $heading-color;
+        margin-bottom: 0;
+    }
+    span{
+        font-size: 12px;
+        color: $body-color;
+        font-family: $body-font;
+    }
+    p{
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+    .reply-button{
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 12px;
+        color: #323334;
+        background: #ebebeb;
+        padding: 0px 13px;
+        border-radius: 3px;
+        &:hover{
+            background: $theme-color;
+            color: #ffffff;
+        }
+    }
+
+    &.reply-comment{
+        margin-left: 70px;
+    }
+}
+
+
+@media #{$xs-layout}{
+    .single-comment{
+        padding-left: 0;
+        img{
+            position: relative;
+            margin-bottom: 20px;
+        }
+        &.reply-comment{
+            margin-left: 40px;
+        }
+    }
+}
+
+
+/* Commentbox */
+.commentbox{
+    form{
+        input{
+            height: 42px;
+            & + input{
+                margin-top: 20px;
+            }
+        }
+        input, select, textarea{
+            color: $body-color;
+            font-size: 13px;
+            border: 1px solid #cfcfcf;
+            background: transparent;
+            @include placeholder-color($body-color);
+            padding: 20px;
+            &:focus{
+                background: transparent;
+                border-color: #cfcfcf;
+            }
+        }
+        textarea{
+            padding: 10px 20px;
+            min-height: 166px;
+        }
+        button, input[type="submit"]{
+            display: inline-block;
+            background: #323435;
+            font-size: 12px;
+            border-width: 1px;
+            border-color: #323435;
+            border-style: solid;
+            transition: all 0.4s ease-in-out 0s;
+            overflow: hidden;
+            position: relative;
+            line-height: 1.3;
+            padding: 14px 32px;
+            vertical-align: middle;
+            border-radius: 3px;
+            font-family: $heading-font;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-top: 20px;
+            height: 42px;
+            &:hover{
+                background: $theme-color;
+                color: #ffffff;
+                border-color: $theme-color;
+            }
+        }
+    }
+}
+
+
+@media #{$md-layout}{
+    .commentbox{
+        form{
+            textarea{
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+
+@media #{$sm-layout}{
+    .commentbox{
+        form{
+            textarea{
+                margin-top: 20px;
+            }
+        }
+    }
+}

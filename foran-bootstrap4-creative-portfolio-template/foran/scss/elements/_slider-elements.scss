@@ -1,0 +1,100 @@
+/**
+ * Slider Elements
+ */
+
+.slider-navigation-style-1{
+    position: relative;
+
+    .cr-navigation{
+        position: absolute;
+        display: inline-block;
+        height: 45px;
+        width: 45px;
+        text-align: center;
+        top: -75px;
+        left: auto;
+        font-size: 24px;
+        line-height: 41px;
+        color: #6b6b6b;
+        border: 1px solid #e5e5e5;
+        border-radius: 1000px;
+        z-index: 2;
+        transition: all 0.4s ease-out 0s;
+        background: #ffffff;
+        cursor: pointer;
+
+        &:hover{
+            background: $theme-color;
+            color: #ffffff;
+            border-color: $theme-color;
+        }
+
+        &:before{
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 35px;
+            background: #e5e5e5;
+            top: 50%;
+            z-index: -1;
+        }
+
+        &:after{
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 8px;
+            background: #e5e5e5;
+            top: 50%;
+            z-index: -1;
+        }
+
+        &.cr-navigation-prev{
+            right: 105px;
+
+            &:before{
+                right: 100%;
+                left: auto;
+            }
+
+            &:after{
+                left: 100%;
+                right: auto;
+            }
+        }
+
+        &.cr-navigation-next{
+            right: 50px;
+
+            &:before{
+                left: 100%;
+                right: auto;
+            }
+
+            &:after{
+                left: auto;
+                right: 100%;
+            }
+
+        }
+
+    }
+}
+
+@media #{$xs-layout}{
+    .slider-navigation-style-1{
+        padding-bottom: 80px;
+        .cr-navigation{
+            top: auto;
+            bottom: 0;
+            &.cr-navigation-prev {
+                left: auto;
+                right: calc(50% + 5px);
+            }
+            &.cr-navigation-next {
+                left: calc(50% + 5px);
+                right: auto;
+            }
+        }
+    }
+}

@@ -1,0 +1,119 @@
+/**
+ * Team Member
+ */
+
+.team-member{
+    margin-bottom: 30px;
+    position: relative;
+
+    .team-member-thumb{
+        position: relative;
+        z-index: 1;
+        img{
+            transition-timing-function: ease-in-out;
+            width: 100%;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(#000000, 0.62);
+            z-index: 1;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.4s ease-in-out 0s;
+        }
+    }
+
+    .team-member-content{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h5{
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            transform: translateY(-15px);
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.4s ease-in-out 0s;
+        }
+        h6{
+            font-family: $body-font;
+            font-weight: 400;
+            font-size: 12px;
+            color: #dddddd;
+            margin-bottom: 0;
+            text-transform: uppercase;
+            transform: translateY(-15px);
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.4s ease-in-out 0.1s;
+        }
+    }
+
+    .social-icons{
+        position: absolute;
+        bottom: 35px;
+        background: transparent;
+        padding: 0;
+        transform: translateY(30px);
+        visibility: hidden;
+        opacity: 0;
+        left: 0;
+        width: 100%;
+        transition: all 0.4s ease-in-out 0s;
+        ul{
+            margin-bottom: 0;
+            li{
+                margin: 0 7px;
+                a{
+                    background: #ffffff;
+                    color: $heading-color;
+                    height: 30px;
+                    width: 30px;
+                    line-height: 30px;
+                    &:hover{
+                        color: #ffffff;
+                        background: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+
+    &:hover{
+        .team-member-thumb{
+            &::before{
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+        .social-icons{
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .team-member-content{
+            h5, h6{
+                transform: translateY(0);
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+
+}
+

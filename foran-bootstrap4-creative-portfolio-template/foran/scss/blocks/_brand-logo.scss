@@ -1,0 +1,154 @@
+/**
+ * Brand Logos
+ */
+
+.brand-logos{
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid #dddddd;
+    border-left: 1px solid #dddddd;
+    .brand-logo{
+        border-bottom: 1px solid #dddddd;
+        border-right: 1px solid #dddddd;
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+        text-align: center;
+        align-self: stretch;
+        padding: 16px 20px;
+        background: transparent;
+        transition: 0.4s ease-out 0s;
+        max-height: 102px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+            max-height: 100%;
+        }
+        &:hover{
+            background: rgba(#000000, 0.1);
+        }
+    }
+}
+
+@media #{$md-layout}{
+    .brand-logos .brand-logo{
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+}
+
+@media #{$sm-layout}{
+    .brand-logos .brand-logo{
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+        padding: 30px 20px;
+    }
+}
+
+@media #{$xs-layout}{
+    .brand-logos .brand-logo{
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 30px 20px;
+    }
+}
+
+
+/* Brand Logo 2 */
+.brand-logos-slider{
+    position: relative;
+
+    .brand-logo{
+        text-align: center;
+        a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            transition: 0.4s ease-out 0s;
+            min-height: 180px;
+            max-height: 180px;
+            &:hover{
+                background: #f3f3f3;
+            }
+        }
+    }
+
+    .cr-navigation{
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+        height: 40px;
+        width: 40px;
+        line-height: 38px;
+        display: inline-block;
+        border-radius: 3px;
+        background: #ffffff;
+        border: 1px solid #ffffff;
+        font-size: 22px;
+        text-align: center;
+        z-index: 2;
+        cursor: pointer;
+        box-shadow: 0 0 4px rgba(0,0,0,0.1);
+        transition: all 0.4s ease-out 0s;
+        visibility: hidden;
+        opacity: 0;
+        color: #333333;
+
+        &:hover{
+            background: $theme-color;
+            border-color: $theme-color;
+            color: #ffffff;
+        }
+
+        &.cr-navigation-prev{
+            left: auto;
+            right: 100%;
+        }
+
+        &.cr-navigation-next{
+            right: auto;
+            left: 100%;
+        }
+
+    }
+    
+    &:hover{
+        .cr-navigation{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+@media #{$md-layout}{
+    .brand-logos-slider{
+        .cr-navigation{
+            &.cr-navigation-prev{
+                left: 0;
+                right: auto;
+            }
+    
+            &.cr-navigation-next{
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+}
+
+@media #{$sm-layout}{
+    .brand-logos-slider{
+        .cr-navigation{
+            &.cr-navigation-prev{
+                left: 0;
+                right: auto;
+            }
+    
+            &.cr-navigation-next{
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,333 @@
+/**
+ * Footer Styles
+ */
+
+/* Footoer Widgets */
+.widgets.footer-widgets{
+
+    .single-widget{
+        ul{
+            padding-left: 0;
+            margin-bottom: 0;
+            li{
+                list-style: none;
+            }
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+
+    .widget-title{
+        color: #C0C0C0;
+        font-family: $heading-font;
+        font-weight: 700;
+        margin-bottom: 30px;
+        letter-spacing: 0.5px;
+        position: relative;
+        padding-bottom: 8px;
+        font-size: 14px;
+    }
+
+    .single-widget + .single-widget{
+        border-top: 1px solid #7a7b7c;
+        margin-top: 22px;
+        padding-top: 22px;
+    }
+
+    /* Widget About */
+    .widget-about{
+        & > a{
+            display: inline-block;
+            margin-bottom: 28px;
+        }
+        p{
+            color: #C0C0C0;
+            font-size: 14px;
+            line-height: 24px;
+            margin-bottom: 0;
+        }
+        ul{
+            margin-top: 30px;
+            li{
+                color: #000;
+                font-size: 13px;
+                color: #C0C0C0;
+                display: flex;
+                align-items: center;
+                padding: 10px 0;
+                border-top: 1px solid #38393d;
+                padding-left: 40px;
+                position: relative;
+                a{
+                    color: #C0C0C0;
+                    &:hover{
+                        color: $theme-color;
+                    }
+                }
+                p{
+                    line-height: 20px;
+                    margin-bottom: 0;
+                    flex-shrink: 100;
+                }
+                span{
+                   font-size: 16px;
+                   color: #C0C0C0;
+                   line-height: 28px;
+                   position: absolute;
+                   left: 0;
+                   top: 6px;
+                }
+
+                &.phone, &.fax{
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+    /* Widget Twitter Feed */
+    .widget-twitter-feed{
+        ul{
+            li{
+                color: #c0c0c0;
+                padding-left: 37px;
+                position: relative;
+                margin-bottom: 20px;
+                &::before{
+                    content: "\f099";
+                    font-family: 'fontAwesome';
+                    left: 0;
+                    top: 0;
+                    font-size: 16px;
+                    position: absolute;
+                    color: $twitter;
+                }
+                p{
+                    font-size: 14px;
+                    a{
+                        color: #c0c0c0;
+                    }
+                    &.tweet{
+                        font-size: 14px;
+                        line-height: 24px;
+                        color: #c0c0c0;
+                        overflow: hidden;
+                        margin-bottom: 10px;
+                        max-height: 78px;
+                        display: -webkit-box;
+                        line-clamp: 3;
+                        -webkit-line-clamp: 3;
+                        box-orient: vertical;
+                        -webkit-box-orient: vertical;
+                    }
+                    &.timePosted{
+                        color: #c0c0c0;
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        margin-bottom: 0;
+                        a{
+                            &:hover{
+                                color: $theme-color;
+                            }
+                        }
+                    }
+                    &.interact{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Widget Tags */
+    .widget-tags{
+        ul{
+            font-size: 0;
+            margin-left: -8px;
+            li{
+                display: inline-block;
+                font-size: 13px;
+                letter-spacing: 0.4px;
+                margin-left: 8px;
+                margin-top: 8px;
+                a{
+                    display: inline-block;
+                    color: #c0c0c0;
+                    border: 1px solid #7a7b7c;
+                    border-radius: 3px;
+                    padding: 4px 15px;
+                    &:hover{
+                        background: $theme-color;
+                        color: #ffffff;
+                        border-color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Widget Newsletter */
+    .widget-newsletter{
+        p{
+            color: #c0c0c0;
+        }
+        form{
+            display: flex;
+            input{
+                font-size: 12px;
+                letter-spacing: 0.5px;
+                color: #c0c0c0;
+                font-style: italic;
+                background: #34373d;
+                border: 1px solid #34373d;
+                outline: none;
+                height: 36px;
+                border-radius: 4px;
+                margin-right: 10px;
+                @include placeholder-color(#c0c0c0);
+            }
+            button{
+                height: 36px;
+                width: 36px;
+                display: inline-block;
+                border-radius: 4px;
+                background: $theme-color;
+                color: #ffffff;
+                border: 1px solid $theme-color;
+                flex: 0 0 36px;
+            }
+        }
+    }
+
+    /* Widget Social Icons */
+    .widget-social-icons{
+        ul{
+            font-size: 0;
+            li{
+                font-size: 14px;
+                display: inline-block;
+                margin-left: 15px;
+                &:first-child{
+                    margin-left: 0;
+                }
+                a{
+                    height: 35px;
+                    width: 35px;
+                    line-height: 33px;
+                    display: inline-block;
+                    border-radius: 1000px;
+                    border: 1px solid #7a7b7c;
+                    text-align: center;
+                    color: #c0c0c0;
+                    &:hover{
+                        color: #ffffff;
+                        background: $theme-color;
+                        border-color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+.footer-copyright-area{
+    padding: 10px 0;
+}
+
+.footer-copyright{
+    padding: 22px 0;
+    font-size: 13px;
+    color: #C0C0C0;
+    p{
+        margin-bottom: 0;
+    }
+    a{
+        color: #ffffff;
+        &:hover{
+            color: $theme-color;
+        }
+    }
+}
+
+.copyright-area-social{
+    padding: 10px 0;
+}
+.copyright-payment-method-image{
+    text-align: right;
+}
+
+@media #{$lg-layout}{
+    .widgets.footer-widgets{
+        .widget-about ul li{
+            padding-left: 30px;            
+        }
+        .widget-social-icons ul li{
+            margin-left: 8px;
+        }
+    }
+}
+
+@media #{$md-layout}{
+    .footer-social-icons{
+        text-align: center;
+    }
+    .widgets.footer-widgets{
+        [class^="col"] + [class^="col"]{
+            .single-widget{
+                margin-top: 50px;
+            }
+        }
+    }
+}
+
+@media #{$sm-layout}{
+    .footer-social-icons{
+        text-align: center;
+        li a {
+            height: 38px;
+            width: 38px;
+            line-height: 38px;
+            font-size: 14px;
+        }
+    }
+    .widgets.footer-widgets{
+        [class^="col"] + [class^="col"]{
+            .single-widget{
+                margin-top: 50px;
+            }
+        }
+    }
+    .copyright-area-social{
+        padding: 0;
+        padding-bottom: 30px;
+    }
+    .footer-copyright{
+        text-align: center;
+        padding: 18px 0;
+    }
+    .copyright-payment-method-image{
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    .widgets.footer-widgets .widget-title{
+        margin-bottom: 15px;
+    }
+}
+
+@media #{$xs-layout}{
+    .footer-newsletter-form{
+        flex-wrap: wrap;
+        h4{
+            margin-bottom: 15px;
+        }
+        input[type="email"]{
+            margin-right: 0;
+        }
+        input[type="submit"], button{
+            margin-top: 20px;
+        }
+    }
+}

@@ -1,0 +1,200 @@
+/**
+ * Blog Item
+ */
+
+.blog-item{
+    margin-bottom: 30px;
+
+    .blog-item-thumb{
+        position: relative;
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        margin-bottom: 25px;
+        img{
+            transform: scale(1);
+            transition: all 0.4s ease-out 0s;
+            width: 100%;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background: rgba($theme-color, 0.5);
+        }
+    }
+
+    .blog-item-title{
+        color: $heading-color;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-weight: 600;
+        margin-bottom: 8px;
+        a{
+            color: $heading-color;
+            &:hover{
+                color: $theme-color;
+            }
+        }
+    }
+
+    p{
+        margin-bottom: 20px;
+    }
+
+    .blog-item-meta{
+        width: 100%;
+        font-size: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-top: 1px solid #dcdcdc;
+        border-bottom: 1px solid #dcdcdc;
+    
+        &::before{
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 120px;
+            left: 30px;
+            top: 0;
+            background: #ebebec;
+        }
+    
+        span{
+            padding-right: 20px;
+            color: $body-color;
+            &:last-child{
+                padding-right: 0;
+            }
+            i{
+                padding-right: 4px;
+                transition: all 0.3s ease-in-out 0s;
+            }
+            a{
+                color: $body-color;
+                &:hover{
+                    color: $theme-color;
+                    i{
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+    
+    }
+
+    .cr-btn,
+    a.cr-btn{
+        margin-top: 16px;
+        &::before, &::after{
+            display: none;
+        }
+        &:hover{
+            transform: translate(0);
+            background: $theme-color !important;
+            border-color: $theme-color !important;
+        }
+    }
+
+    &:hover{
+        .blog-item-thumb{
+            img{
+                transform: scale(1.2);
+            }
+        }
+
+    }
+
+}
+
+.blog-item-slider-active{
+    .blog-item{
+        margin-bottom: 0;
+    }
+}
+
+
+/* Popular Post */
+.popular-post{
+    .popular-post-thumb{
+        display: block;
+        padding-bottom: 15px;
+        img{
+            width: 100%;
+        }
+    }
+    h6{
+        font-size: 13px;
+        font-weight: 700;
+        color: $heading-color;
+        text-transform: uppercase;
+        margin-bottom: 0px;
+        a{
+            color: $heading-color;
+            &:hover{
+                color: $theme-color;
+            }
+        }
+    }
+    span{
+        color: $body-color;
+        font-size: 12px;
+        font-weight: 400;
+    }
+}
+
+.polular-post-slider-active, .polular-post-slider-active-3-items{
+    padding-top: 10px;
+    .cr-navigation{
+        position: absolute;
+        top: 50%;
+        margin-top: -15px;
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        border-radius: 0;
+        background: #f7f7f7;
+        border: 1px solid #f7f7f7;
+        font-size: 18px;
+        text-align: center;
+        padding: 0;
+        line-height: 28px;
+        color: #adadad;
+        z-index: 2;
+        cursor: pointer;
+        transition: all 0.4s ease-out 0s;
+        visibility: hidden;
+        opacity: 0;
+
+        &:hover{
+            background: $theme-color;
+            border-color: $theme-color;
+            color: #ffffff;
+        }
+
+        &.cr-navigation-prev{
+            left: 0;
+            right: auto;
+        }
+
+        &.cr-navigation-next{
+            left: auto;
+            right: 0;
+        }
+
+    }
+    
+    &:hover{
+        .cr-navigation{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+

@@ -1,0 +1,164 @@
+/**
+ * Accordion
+ */
+
+.cr-accordion-wrap{
+    border-top: 1px dashed #e1e1e1;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+}
+
+.cr-accordion{
+
+    .cr-accordion-header{
+        a{
+            border-bottom: 1px dashed #e1e1e1;
+            border-collapse: collapse;
+            font-size: 16px;
+            font-family: $body-font;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            color: $body-color;
+            display: block;
+            padding: 14px 0;
+            padding-right: 20px;
+            position: relative;
+            padding-left: 70px;
+
+            &::before{
+                content: "\f05d";
+                font-family: 'fontAwesome';
+                width: 70px;
+                text-align: left;
+                display: inline-block;
+                position: absolute;
+                left: 30px;
+                top: 14px;
+            }
+
+
+            &:not(.collapsed){
+                color: $heading-color;
+                font-weight: 700;
+                &::before{
+                    content: "\f05c";
+                    font-weight: 400;
+                }
+            }
+
+        }
+    }
+
+    .cr-accordion-body{
+        padding: 30px;
+        border-bottom: 1px dashed #e1e1e1;
+    }
+
+    &:last-child{
+        .cr-accordion-header{
+            a{
+                &.collapsed{
+                    border-bottom: none;
+                }
+            }
+        }
+        .cr-accordion-body{
+            border-bottom: none;
+        }
+    }
+
+}
+
+
+.faq-questions{
+    margin-top: -35px;
+}
+.faq-single-questions{
+    margin-top: 70px;     
+}
+
+.faq-wrapper{
+    h5{
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        color: $heading-color;
+        text-transform: uppercase;
+    }
+
+    p{
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        font-style: italic;
+        font-weight: 400;
+    }
+    
+}
+
+.faq-single-title{
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 0;
+    background: #eeeded;
+    border-radius: 4px;
+    padding: 17px 25px;
+    text-transform: uppercase;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+    &::before{
+        content: "";
+        position: absolute;
+        width: calc(100% - 70px);
+        height: 1px;
+        background: #e1e1e1;
+        top: 50%;
+        right: 40px;
+        z-index: -1;
+    }
+    &::after{
+        content: "\f103";
+        font-family: 'fontAwesome';
+        position: absolute;
+        right: 25px;
+        top: 18px;
+    }
+    span{
+        background: #eeeded;
+        position: relative;
+        padding-right: 10px;
+        z-index: 2;
+    }
+}
+
+
+@media #{$md-layout}{
+    .cr-accordion{
+        .cr-accordion-header{
+            a{
+                padding-left: 60px;
+                &::before{
+                    width: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media #{$sm-layout}{
+    .cr-accordion{
+        .cr-accordion-body {
+            padding: 30px 20px;
+        }
+        .cr-accordion-header{
+            a{
+                padding-left: 40px;
+                &::before{
+                    width: 25px;
+                    left: 20px;
+                }
+            }
+        }
+    }
+}
