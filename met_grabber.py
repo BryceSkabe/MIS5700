@@ -1,22 +1,30 @@
 import requests
 
-met = requests.get('https://collectionapi.metmuseum.org/public/collection/v1/objects', params='objectIDs').json()
+# add desired queries to this list
+queries = ['pottery']
 
-object_list = [k for k in met.values()]
+for query in queries:
 
-for art_object in object_list[1]:
+    met = requests.get('https://collectionapi.metmuseum.org/public/collection/v1/search', params='q=' + query).json()
 
-    url = 'https://collectionapi.metmuseum.org/public/collection/v1/objects/' + str(art_object)
+    object_list = [k for k in met.values()]
 
-    obj_request = requests.get(url)
+    for art_object in object_list[1]:
+        url = 'https://collectionapi.metmuseum.org/public/collection/v1/objects/' + str(art_object)
 
-    obj_request = obj_request.json()
+        print(url)
 
-    print("Object ID: " + str(obj_request['objectID']))
-    print("Artist Name: " + obj_request['artistDisplayName'])
-    print("Title: " + obj_request['title'])
-    print("Image: " + obj_request['primaryImage'])
-    print("\n--------------------\n")
+        obj_request = requests.get(url)
+
+        obj_request = obj_request.json()
+
+        print("Object ID: " + str(obj_request['objectID']))
+        print("Artist Name: " + obj_request['artistDisplayName'])
+        print("Title: " + obj_request['title'])
+        print("Image: " + obj_request['primaryImage'])
+        print(query)
+        print("\n--------------------\n")
+
 
 
 
