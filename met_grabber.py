@@ -1,7 +1,11 @@
 import requests
+import pyodbc
 
 # add desired queries to this list
 queries = ['pottery']
+
+sql_query = (
+        "INSERT INTO mis5700 (`id`, `artist`, `title`, `image`, `classification`, `date`, `medium`, `department`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)")
 
 for query in queries:
 
@@ -36,6 +40,18 @@ for query in queries:
             print("Department: " + obj_request['department'])
             print(query)
             print("\n--------------------\n")
+
+            conn = pyodbc.connect('Driver={SQL Server};'
+                                  'Server=server_name;'
+                                  'Database=db_name;'
+                                  'Trusted_Connection=yes;')
+
+            cursor = conn.cursor()
+            values = obj_request['objectID'], obj_request['artistDisplayName'], obj_request['title'], obj_request['primaryImage'], obj_request['classification'], obj_request['objectDate'], obj_request['medium'], obj_request['department']
+            cursor.execute(query, values)
+            cursor.close()
+            conn.commit()
+            conn.close()
 
         else:
             continue
