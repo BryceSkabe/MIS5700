@@ -1,11 +1,14 @@
 body{
   min-height:100vh; 
 }
+h1{
+  margin: 1rem;
+}
 main > .container {
   margin-top:60px;
   padding: 60px 15px 0;
 }
-img {
+.carousel-img {
   width: fit-content;
   max-width: 100%;
   max-height: 600px;
@@ -24,8 +27,19 @@ img {
 .center {
   margin-right: auto;
   margin-left: auto;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
 }
 .carousel-inner{
   max-height: 600px;
   background: #2e3133;
+}
+.navbar-brand{
+  max-height: 30px;
+  align-content: center;
+}
+.card{
+  align-self: center;
+  margin: 2rem;
 }
