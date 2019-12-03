@@ -1,11 +1,12 @@
 import requests
 import pyodbc
+from random import randint
 
 # add desired queries to this list
-queries = ['pottery']
+queries = ['ceramic', 'sculpture', 'painting', 'photo']
 
 sql_query = (
-        "INSERT INTO mis5700 (`id`, `artist`, `title`, `image`, `classification`, `date`, `medium`, `department`, `query`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)")
+        "INSERT INTO mis5700.artmastery (id, artist, title, image, classification, date, medium, department, price, query) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
 
 for query in queries:
 
@@ -38,20 +39,28 @@ for query in queries:
             print("Object Date: " + obj_request['objectDate'])
             print("Object Medium: " + obj_request['medium'])
             print("Department: " + obj_request['department'])
+            price = str(randint(100, 999999)/100.00)
+            print("Price: " + price)
             print(query)
             print("\n--------------------\n")
 
-            # conn = pyodbc.connect('Driver={SQL Server};'
-            #                       'Server=server_name;'
-            #                       'Database=db_name;'
-            #                       'Trusted_Connection=yes;')
-            #
-            # cursor = conn.cursor()
-            # values = obj_request['objectID'], obj_request['artistDisplayName'], obj_request['title'], obj_request['primaryImage'], obj_request['classification'], obj_request['objectDate'], obj_request['medium'], obj_request['department'], query
-            # cursor.execute(query, values)
-            # cursor.close()
-            # conn.commit()
-            # conn.close()
+            try:
+
+                conn = pyodbc.connect(Driver='{SQL Server}',
+                                      Server='data.principlesofecommerce.com,1433',
+                                      Database='artmastery',
+                                      UID='fall2019',
+                                      PWD='1fall20191')
+
+                cursor = conn.cursor()
+                values = obj_request['objectID'], obj_request['artistDisplayName'], obj_request['title'], obj_request['primaryImage'], obj_request['classification'], obj_request['objectDate'], obj_request['medium'], obj_request['department'], price, query
+                cursor.execute(sql_query, values)
+                cursor.close()
+                conn.commit()
+                conn.close()
+
+            except pyodbc.IntegrityError:
+                continue
 
         else:
             continue
