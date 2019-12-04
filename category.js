@@ -1,3 +1,7 @@
+import { React, ReactDOM } from "https://unpkg.com/es-react@16.8.60/index.js";
+import htm from "https://unpkg.com/htm@2.2.1/dist/htm.mjs";
+const html = htm.bind(React.createElement);
+
 let artpieces = {
   products: [
     {
@@ -28,9 +32,7 @@ let artpieces = {
   pageNum: 2
 };
 
-import { React, ReactDOM } from "https://unpkg.com/es-react@16.8.60/index.js";
-import htm from "https://unpkg.com/htm@2.2.1/dist/htm.mjs";
-const html = htm.bind(React.createElement);
+
 
 function Artpiece(props) {
   const artpiece = props.artpiece;
