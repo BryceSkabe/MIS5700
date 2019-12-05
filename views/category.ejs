@@ -1,9 +1,21 @@
-<main role="main">
+<main role="main" style="padding-top: 60px">
         <div class="container">
           <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-          <h1>Sculpture</h1>
+            <h1>
+                <% if (search !== "undefined") { %>
+                    <%- search %>
+                <% } else { %>
+                    Categories
+                <% } %>
+            </h1>
           <div class="container">
             <div id="displayartdiv" class="row displaydiv"> </div>
           </div>
         </div>
 </main>
+
+<%- contentFor('scriptsAfter') %>
+<script type="module" src="/js/app.js"></script>
+
+<%- contentFor('cssAfter')%>
+<link rel="stylesheet" href="css/project.css" />

@@ -1,0 +1,73 @@
+<h3 class="login-heading mb-4">Sign Up</h3>
+<form method="POST" action="/signup">
+  <div id="app">
+    <div class="form-label-group">
+      <input
+        type="text"
+        id="inputDisplayName"
+        class="form-control"
+        placeholder="Display Name e.g. John J."
+        name="displayName"
+        required
+        autofocus
+      />
+      <label for="inputDisplayName">Display Name</label>
+    </div>
+
+    <div class="form-label-group">
+      <input
+        type="email"
+        id="inputEmail"
+        class="form-control"
+        placeholder="Email address e.g. me@example.com"
+        name="email"
+        required
+        autofocus
+      />
+      <label for="inputEmail">Email address</label>
+    </div>
+
+    <div class="form-label-group">
+      <input
+        type="password"
+        id="inputPassword"
+        class="form-control"
+        placeholder="Password"
+        name="password"
+        required
+      />
+      <label for="inputPassword">Password</label>
+    </div>
+
+    <div class="form-label-group">
+      <input
+        type="password"
+        id="inputPasswordConfirmation"
+        class="form-control"
+        placeholder="Password Confirmation"
+        name="passwordConfirmation"
+        required
+      />
+      <label for="inputPasswordConfirmation">Password Confirmation</label>
+    </div>
+
+    <div class="custom-control custom-checkbox mb-3">
+      <input type="checkbox" class="custom-control-input" id="customCheck1" />
+      <label class="custom-control-label" for="customCheck1"
+        >Remember password</label
+      >
+    </div>
+    <button
+      class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </div>
+  <div class="text-center">
+    <a class="small" href="/login">Already have an account? Login!</a>
+    |
+    <a class="small" href="#">Forgot password?</a>
+  </div>
+</form>
+<!-- <script type="module" src="/assets/js/pages/signup.module.js"></script> -->
