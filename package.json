@@ -1,0 +1,27 @@
+{
+  "name": "art-mastery",
+  "version": "1.0.0",
+  "description": "MIS5700 Final Project created by: Justin Maughan, Martin Franz, and Bryce Skabelund.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BryceSkabe/MIS5700.git"
+  },
+  "author": "Art Mastery Group",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BryceSkabe/MIS5700/issues"
+  },
+  "homepage": "https://github.com/BryceSkabe/MIS5700#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "mssql": "^6.0.1"
+  },
+  "devDependencies": {}
+}
