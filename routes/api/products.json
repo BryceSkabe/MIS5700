@@ -1,6 +1,29 @@
 {
     "products": [
+      {
+        "name":
+        "Lectern for the Reading of the Gospels with the Eagle of Saint John the Evangelist",
+        "description": "Giovanni Pisano",
+        "img": "https://images.metmuseum.org/CRDImages/md/original/DP167328.jpg",
+        "price": "104.99",
+        "id": 1
+      },
+      {
+        "name": "Relief: two servants bearing food and drink",
+        "description": "Achaemenid",
+        "img": "https://images.metmuseum.org/CRDImages/an/original/DP226593.jpg",
+        "price": "174.99",
+        "id": 2
+      },
+      {
+        "name":
+        "Tomb Effigy Bust of Marie de France (1327-41), daughter of Charles IV of France and Jeanne d'Evreux",
+        "description": "Jean de Liège",
+        "img": "https://images.metmuseum.org/CRDImages/md/original/DT135.jpg",
+        "price": "144.99",
+        "id": 3
+      }
     ],
-    "count": 0,
-    "pageNum":1
-}
+    "count": 8,
+    "pageNum": 2
+  }

@@ -25,7 +25,6 @@ main > .container {
   padding-left: 15px;
 }
 .center {
-  display: flex;
   margin-right: auto;
   margin-left: auto;
   align-content: center;
@@ -43,9 +42,4 @@ main > .container {
 .card{
   align-self: center;
   margin: 2rem;
-}
-
-.card-img-top{
-  height: 30px;
-  width: 30px;
 }
