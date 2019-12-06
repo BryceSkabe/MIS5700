@@ -144,6 +144,7 @@ module.exports = function(passport) {
           ); // create the loginMessage and save it to session as flashdata
 
         // all is well, return successful user
+        console.log("You signed in.");
         return done(null, user);
       }
     )

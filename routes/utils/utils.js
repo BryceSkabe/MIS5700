@@ -4,8 +4,9 @@ const sql = require("mssql");
 // route middleware to make sure a user is logged in
 module.exports.isLoggedIn = function isLoggedIn(req, res, next) {
   // if user is authenticated in the session, carry on
-  if (req.isAuthenticated()) return next();
-
+  if (req.isAuthenticated()){
+   return next();
+  }
   // if they aren't redirect them to the login page
   req.flash("error", "You must be logged in to visit that page.");
   res.redirect("/login");

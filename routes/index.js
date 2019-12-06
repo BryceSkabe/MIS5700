@@ -19,24 +19,14 @@ router.get("/about", (req, res) => {
     })
 });
 
-router.get("/category/:category", (req, res) => {
+router.get("/category/:category/*", (req, res) => {
     res.render("category", {
-        search: req.params.category,
+        search: req.params.category.toUpperCase(),
         title: "ArtMastery - Listings",
         // TODO:: Query database with req.params.category
         // if req.params.category == '?' then search
         objects: {}
     })
-});
-
-router.get("/category/?", (req, res) => {
-  res.render("category", {
-      search: req.params.category,
-      title: "ArtMastery - Listings",
-      // TODO:: Query database with req.params.category
-      // if req.params.category == '?' then search
-      objects: {}
-  })
 });
 
 

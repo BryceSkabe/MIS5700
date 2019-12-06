@@ -13,10 +13,10 @@
                         Category
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/category/ceramics">Ceramics</a>
-                        <a class="dropdown-item" href="/category/paintings">Paintings</a>
-                        <a class="dropdown-item" href="/category/sculptures">Sculptures</a>
-                        <a class="dropdown-item" href="/category/photos">Photos</a>
+                        <a class="dropdown-item" href="/category/ceramics/?ceramic/">Ceramics</a>
+                        <a class="dropdown-item" href="/category/paintings/?painting/">Paintings</a>
+                        <a class="dropdown-item" href="/category/sculptures/?sculpture/">Sculptures</a>
+                        <a class="dropdown-item" href="/category/photos/?photo/">Photos</a>
                     </div>
                 </div>
             </li>
@@ -36,11 +36,13 @@
                 <a class="nav-link" href="/about">About</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0" action="/category/">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search</button>
-        </form>
-        <div id="shoppingCart"class>
-        </div>
+        <div id="search" >
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <div id="shoppingCart"class>
+            </div>
+          </div>
     </div>
 </nav>
