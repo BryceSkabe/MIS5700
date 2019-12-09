@@ -24,7 +24,6 @@ function Artpiece(props) {
         <img
         src=${"" + artpiece.image}
         className="card-img-top"
-        innerHeight='50px'
         alt="bootstraplogo"
         />
         <div className="card-body">
@@ -261,7 +260,8 @@ function Search() {
   return html`
     <form id="search" onSubmit=${e => {
       e.preventDefault();
-      filterArtpieces(searchTerm);
+      console.log("Im searaching" + searchTerm + " dude.");
+      query(searchTerm);
     }} 
     className="form-inline my-2 my-lg-0">
     <input value=${searchTerm} onChange=${eventData => setSearchTerm( eventData.target.value)} 
@@ -316,6 +316,23 @@ let search = document.location.search.toString();
 search = search.substr(1, search.length - 1);
 if(search !== undefined){
   let request = '/api/search/'+search;
+  fetch(request).then(response => {
+      if (response.ok) {
+       return response.json();
+      } else {
+        throw Error("Something went wrong with that request:", response.statusText);
+      }
+  }).then(function (data) {
+    console.log(data);
+    console.log("returned stuff");
+    artpieces = data;
+    filteredArtpieces = artpieces['products'];
+    render();
+  });
+}
+
+function query(term){
+  let request = '/api/search/'+term+'/';
   fetch(request).then(response => {
       if (response.ok) {
        return response.json();

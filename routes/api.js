@@ -13,7 +13,10 @@ router.get("/search/:category", async (req, res) => {
     res.json({
       products: all}); 
   } else {
-    
+    var query = "SELECT TOP 20 * FROM mis5700.artmastery WHERE CONVERT(VARCHAR, title) LIKE '%"+req.params.category+"%'";
+    var all = await sqlFetch(query);    
+    res.json({
+      products: all}); 
   }
 });
 
