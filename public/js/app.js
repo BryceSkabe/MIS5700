@@ -30,8 +30,8 @@ const shoppingCartData = {
 function Artpiece(props) {
   const artpiece = props.artpiece;
   return html`
-    <div key=${artpiece.id} class="grid-item col-lg-4 col-md-6 col-mb-4">
-      <div class="grid-item">
+    <div key=${artpiece.id} class="col-lg-4 col-md-6 col-mb-4">
+      <div>
         <img
         src=${"" + artpiece.image}
         className="card-img-top"

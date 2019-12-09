@@ -1,16 +1,16 @@
 <main role="main" style="padding-top: 60px">
-    <div class="container-fluid" style="height: auto; width: auto;">
-        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-        <h1 class="my-4 font-weight-bold" id='cat'>
-          <% if (search !== "undefined") { %>
-            <%- search %>
-          <% } else { %>
-            Categories
-          <% } %>
+    <div class="container">
+      <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+        <h1 id='cat'>
+            <% if (search !== "undefined") { %>
+                <%- search %>
+            <% } else { %>
+                Categories
+            <% } %>
         </h1>
-        <div class="grid row" id="displayartdiv">
-          <!-- Items to go here -->
-        </div>
+      <div class="container">
+        <div id="displayartdiv" class="row displaydiv"> </div>
+      </div>
     </div>
 </main>
 
