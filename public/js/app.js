@@ -254,6 +254,9 @@ function query(term){
     console.log("returned stuff");
     artpieces = data;
     filteredArtpieces = artpieces['products'];
+    search = term.toUpperCase();
+    let div = document.getElementById('cat');
+    div.innerHTML = search;
     render();
   });
 }
