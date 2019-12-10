@@ -4,17 +4,6 @@ const html = htm.bind(React.createElement);
 let artpieces;
 let filteredArtpieces;
 
-var $grid = $('.grid').masonry({
-  itemSelector: '.grid-item',
-  percentPosition: true,
-  columnWidth: '.grid-sizer'
-});
-
-// layout Masonry after each image loads
-$grid.imagesLoaded().progress( function() {
-  $grid.masonry();
-});
-
 const shoppingCartData = {
   "order": {
       "orderId": 1,
@@ -30,7 +19,7 @@ const shoppingCartData = {
 function Artpiece(props) {
   const artpiece = props.artpiece;
   return html`
-    <div key=${artpiece.id} class="col-lg-4 col-md-6 col-mb-4">
+    <div key=${artpiece.id} class="word">
       <div>
         <img
         src=${"" + artpiece.image}

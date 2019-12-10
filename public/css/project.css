@@ -1,22 +1,3 @@
-* { box-sizing: border-box; }
-
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.grid-item {
-  float: left;
-}
-.grid-item--width2 { width: 340px; }
-.grid-item--width3 { width: 520px; }
-.grid-item--width4 { width: 780px; }
-
-.grid-item--height2 { height: 200px; }
-.grid-item--height3 { height: 260px; }
-.grid-item--height4 { height: 360px; }
-
 body{
   min-height:100vh; 
 }
@@ -61,4 +42,15 @@ main > .container {
 .card{
   align-self: center;
   margin: 2rem;
+}
+
+.word{
+  -webkit-column-break-inside: avoid !important;
+          page-break-inside: avoid !important;
+               break-inside: avoid !important;
+}
+
+.mason{
+  padding: 1em; 
+  column-count: 3;
 }

@@ -1,3 +1,4 @@
+
 <main role="main" style="padding-top: 60px">
     <div class="container">
       <!-- Stack the columns on mobile by making one full-width and the other half-width -->
@@ -8,17 +9,11 @@
                 Categories
             <% } %>
         </h1>
-      <div class="container">
-        <div id="displayartdiv" class="row displaydiv"> </div>
-      </div>
     </div>
 </main>
+<div  id="displayartdiv" style="padding: 1em; column-count: 3;"> </div>
 
 <%- contentFor('scriptsAfter') %>
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
 <script type="module" src="/js/app.js"></script>
-
-
-<%- contentFor('cssAfter')%>
-<link rel="stylesheet" href="css/project.css" />
