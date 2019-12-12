@@ -23,8 +23,6 @@ router.get("/category/:category/*", (req, res) => {
     res.render("category", {
         search: req.params.category.toUpperCase(),
         title: "ArtMastery - Listings",
-        // TODO:: Query database with req.params.category
-        // if req.params.category == '?' then search
         objects: {}
     })
 });
@@ -56,6 +54,7 @@ router.get("/login", function(req, res) {
   router.post(
     "/signup",
     passport.authenticate("local-signup", {
+      
       successRedirect: "/", // redirect to the secure profile section
       failureRedirect: "/signup", // redirect back to the signup page if there is an error
       failureFlash: true // allow flash messages

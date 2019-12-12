@@ -2,6 +2,7 @@ const { verifyPassword, hashPassword } = require("../utils/utils.js");
 
 const { sqlFetch } = require("../utils/utils.js");
 
+
 // Modified from this tutorial: https://scotch.io/tutorials/easy-node-authentication-setup-and-local
 // config/passport.js
 

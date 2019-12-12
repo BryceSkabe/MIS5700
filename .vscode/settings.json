@@ -1,0 +1,5 @@
+{
+    "appService.showBuildDuringDeployPrompt": false,
+    "appService.defaultWebAppToDeploy": "/subscriptions/6846faf6-3411-4479-ae3b-9f46a21f5618/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/Art-Mastery",
+    "appService.deploySubpath": ""
+}
